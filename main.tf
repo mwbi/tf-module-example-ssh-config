@@ -9,6 +9,7 @@ data "template_file" "ssh_config_template" {
 Host ${host.name}
 Hostname ${fip_association.floating_ip}
 IdentityFile ${var.ssh_private_key}
+UserKnownHostsFile /dev/null
 User ${var.jumphost_user}
 StrictHostKeyChecking accept-new
 %{endif~}
