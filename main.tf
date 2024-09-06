@@ -23,6 +23,7 @@ Host ${host.name}
 Hostname ${host.network[0].fixed_ip_v4}
 User ${group.user_for_ansible}
 IdentityFile ${var.ssh_private_key}
+UserKnownHostsFile /dev/null
 ProxyJump ${var.jumphost_instanceobject.instances[0].name}
 StrictHostKeyChecking accept-new
 %{endfor~}
